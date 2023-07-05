@@ -10,3 +10,7 @@ CareerConnect is a web application aimed at addressing key challenges faced by s
   
  <li><b>Skills Assessment and Gap Analysis Test</b>: Provides a web-based tool for students to assess their skills and identify gaps in relation to industry requirements. Offers personalized recommendations for skill development through online courses, tutorials, and workshops.</li>
 </ol>
+
+This repository contains the codebase for the <em><b>CareerConnect</b> web application</em>, implemented using <em><b>Java and web development technologies</b></em>. It includes modules for mentorship, industry collaborations, job portal integration, skills assessment, and gap analysis. The codebase follows best practices for web application development, ensuring scalability, usability, and security.
+
+Feel free to explore the repository as it make a positive impact on students' career journeys.
