@@ -72,20 +72,36 @@ nav ul li a {
 /* Set featuressection styles */
 .features {
   padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.features h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+.feature-card {
+  width: calc(50% - 20px);
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
-.feature {
-  margin-bottom: 20px;
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.feature h3 {
+.feature-card h3 {
   font-size: 20px;
   margin-bottom: 10px;
+}
+
+.description {
+  display: none;
+}
+
+.feature-card:hover .description {
+  display: block;
 }
 
 /* Set footer styles */
