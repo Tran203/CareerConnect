@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style/forms.css">
+  <title>CareerConnect - Registration</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to CareerConnect Registration</h1>
+    </div>
+  </section>
+
+  <section class="registration">
+    <div class="registration-options">
+      <button class="option active" data-form="student">Student</button>
+      <button class="option" data-form="mentor">Mentor</button>
+    </div>
+    
+    <div class="form-container">
+      <form id="student-form" class="form active">
+        <h2>Student Registration</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <!-- Additional student-specific fields can be added here -->
+        <button type="submit">Register as Student</button>
+      </form>
+
+      <form id="mentor-form" class="form">
+        <h2>Mentor Registration</h2>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <input type="password" placeholder="Password" required>
+        <!-- Additional mentor-specific fields can be added here -->
+        <button type="submit">Register as Mentor</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 CareerConnect. All rights reserved.</p>
+  </footer>
+
+  <script src="registration.js"></script>
+</body>
+</html>
+
