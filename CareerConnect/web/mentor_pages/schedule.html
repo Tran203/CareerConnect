@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Schedule Meetings</title>
+  <style>
+    .card {
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      color: #333333;
+    }
+
+    p {
+      color: #666666;
+    }
+
+    .btn {
+      display: inline-block;
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    form {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input[type="text"], input[type="datetime-local"] {
+      width: 100%;
+      padding: 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: #ffffff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Virtual Meetings</h2>
+    <p>Schedule virtual meetings or discussions with mentees through integrated video conferencing tools.</p>
+    <a href="#" class="btn">Schedule Meetings</a>
+  </div>
+
+  <div id="schedule-form">
+    <h2>Schedule a Meeting</h2>
+    <form action="#">
+      <label for="meeting-title">Meeting Title:</label>
+      <input type="text" id="meeting-title" name="meeting-title" placeholder="Enter meeting title" required>
+
+      <label for="meeting-date">Meeting Date and Time:</label>
+      <input type="datetime-local" id="meeting-date" name="meeting-date" required>
+
+      <input type="submit" value="Schedule Meeting">
+    </form>
+  </div>
+</body>
+</html>
