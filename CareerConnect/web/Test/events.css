@@ -1,0 +1,120 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Set header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Set events section styles */
+.events {
+  padding: 50px;
+  text-align: center;
+}
+
+.events h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.event-wrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.event-section {
+  flex: 1;
+}
+
+.event-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.event-card h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  margin-bottom: 8px;
+}
+
+.event-card .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .events {
+    padding: 30px;
+  }
+
+  .events h1 {
+    font-size: 24px;
+  }
+
+  .event-wrapper {
+    flex-direction: column;
+  }
+
+  .event-section {
+    margin-bottom: 20px;
+  }
+
+  .event-card {
+    padding: 15px;
+  }
+
+  .event-card h3 {
+    font-size: 18px;
+  }
+
+  .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
