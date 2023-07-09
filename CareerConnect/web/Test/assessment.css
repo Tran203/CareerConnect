@@ -1,0 +1,96 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Set header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Set skills assessment section styles */
+.skills-assessment {
+  padding: 50px;
+  text-align: center;
+}
+
+.skills-assessment h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.assessment-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.assessment-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.assessment-form p {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.assessment-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.assessment-form input[type="radio"] {
+  margin-right: 8px;
+}
+
+.assessment-form button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .skills-assessment {
+    padding: 30px;
+  }
+
+  .skills-assessment h1 {
+    font-size: 24px;
+  }
+
+  .assessment-form {
+    max-width: 100%;
+  }
+}
