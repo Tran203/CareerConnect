@@ -1,0 +1,100 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Set header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Set resources section styles */
+.resources {
+  padding: 50px;
+  text-align: center;
+}
+
+.resources h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.resources-list {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.resource {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+}
+
+.resource h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.resource p {
+  margin-bottom: 8px;
+}
+
+.resource .btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .resources {
+    padding: 30px;
+  }
+
+  .resources h1 {
+    font-size: 24px;
+  }
+
+  .resources-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .resource {
+    width: 100%;
+  }
+}
