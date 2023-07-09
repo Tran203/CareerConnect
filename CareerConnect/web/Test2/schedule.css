@@ -1,0 +1,96 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set base font and styles */
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Set header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  margin-right: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+/* Set virtual meetings section styles */
+.virtual-meetings {
+  padding: 50px;
+  text-align: center;
+}
+
+.virtual-meetings h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.meeting-form {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.meeting-form h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.meeting-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.meeting-form input[type="date"],
+.meeting-form input[type="time"],
+.meeting-form input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.meeting-form button {
+  display: block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Responsive styles */
+@media only screen and (max-width: 768px) {
+  .virtual-meetings {
+    padding: 30px;
+  }
+
+  .virtual-meetings h1 {
+    font-size: 24px;
+  }
+
+  .meeting-form {
+    max-width: 100%;
+  }
+}
