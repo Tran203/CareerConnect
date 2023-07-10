@@ -6,26 +6,26 @@ package web.careerconnect.bl;
 
 import java.util.List;
 import javax.ejb.Local;
-import web.careerconnect.entities.User;
+import web.careerconnect.entities.UserAccoun;
 
 /**
  *
  * @author ntokozo
  */
 @Local
-public interface UserFacadeLocal {
+public interface UserAccounFacadeLocal {
 
-    void create(User user);
+    void create(UserAccoun userAccoun);
 
-    void edit(User user);
+    void edit(UserAccoun userAccoun);
 
-    void remove(User user);
+    void remove(UserAccoun userAccoun);
 
-    User find(Object id);
+    UserAccoun find(Object id);
 
-    List<User> findAll();
+    List<UserAccoun> findAll();
 
-    List<User> findRange(int[] range);
+    List<UserAccoun> findRange(int[] range);
 
     int count();
     

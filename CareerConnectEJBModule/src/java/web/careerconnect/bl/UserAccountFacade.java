@@ -7,14 +7,14 @@ package web.careerconnect.bl;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import web.careerconnect.entities.User;
+import web.careerconnect.entities.UserAccount;
 
 /**
  *
  * @author ntokozo
  */
 @Stateless
-public class UserFacade extends AbstractFacade<User> implements UserFacadeLocal {
+public class UserAccountFacade extends AbstractFacade<UserAccount> implements UserAccountFacadeLocal {
 
     @PersistenceContext(unitName = "CareerConnectEJBModulePU")
     private EntityManager em;
@@ -24,8 +24,8 @@ public class UserFacade extends AbstractFacade<User> implements UserFacadeLocal 
         return em;
     }
 
-    public UserFacade() {
-        super(User.class);
+    public UserAccountFacade() {
+        super(UserAccount.class);
     }
     
 }

@@ -5,15 +5,14 @@
 package app.web.careerconnect.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import web.careerconnect.bl.UserFacadeLocal;
-import web.careerconnect.entities.User;
+import web.careerconnect.bl.UserAccountFacadeLocal;
+import web.careerconnect.entities.UserAccount;
 
 /**
  *
@@ -21,7 +20,7 @@ import web.careerconnect.entities.User;
  */
 public class CreateAccountServlet extends HttpServlet {
     @EJB
-    private UserFacadeLocal ufl;
+    private UserAccountFacadeLocal ufl;
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -35,7 +34,7 @@ public class CreateAccountServlet extends HttpServlet {
         String url = "";
         
         //create user account
-        User user = createUserAccount(email,password,role);
+        UserAccount user = createUserAccount(email,password,role);
         ufl.create(user);
         
         //store user info according to their role
@@ -51,13 +50,13 @@ public class CreateAccountServlet extends HttpServlet {
         
     }
 
-    private User createUserAccount(String email, String password, String role) {
-        User u =  new User();
+    private UserAccount createUserAccount(String email, String password, String role) {
+        UserAccount u =  new UserAccount();
         
         //pass variables
         u.setEmail(email);
         u.setPassword(password);
-        u.setRole(role);
+        u.setType(role);
         
         return u;
     }
