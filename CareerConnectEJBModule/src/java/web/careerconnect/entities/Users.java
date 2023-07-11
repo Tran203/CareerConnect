@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @author ntokozo
  */
 @Entity
-public class UserAccount implements Serializable {
+public class Users implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -25,10 +25,10 @@ public class UserAccount implements Serializable {
     private String password;
     private String type;
 
-    public UserAccount() {
+    public Users() {
     }
 
-    public UserAccount(Long id, String email, String password, String type) {
+    public Users(Long id, String email, String password, String type) {
         this.email = email;
         this.password = password;
         this.type = type;
@@ -77,10 +77,10 @@ public class UserAccount implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof UserAccount)) {
+        if (!(object instanceof Users)) {
             return false;
         }
-        UserAccount other = (UserAccount) object;
+        Users other = (Users) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }

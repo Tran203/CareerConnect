@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import web.careerconnect.bl.UserAccountFacadeLocal;
-import web.careerconnect.entities.UserAccount;
+import web.careerconnect.entities.Users;
 
 /**
  *
@@ -34,7 +34,7 @@ public class CreateAccountServlet extends HttpServlet {
         String url = "";
         
         //create user account
-        UserAccount user = createUserAccount(email,password,role);
+        Users user = createUserAccount(email,password,role);
         ufl.create(user);
         
         //store user info according to their role
@@ -50,8 +50,8 @@ public class CreateAccountServlet extends HttpServlet {
         
     }
 
-    private UserAccount createUserAccount(String email, String password, String role) {
-        UserAccount u =  new UserAccount();
+    private Users createUserAccount(String email, String password, String role) {
+        Users u =  new Users();
         
         //pass variables
         u.setEmail(email);
