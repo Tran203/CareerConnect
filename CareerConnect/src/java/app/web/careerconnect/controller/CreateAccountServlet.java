@@ -26,7 +26,9 @@ import web.careerconnect.entities.Users;
 public class CreateAccountServlet extends HttpServlet {
     @EJB
     private UsersFacadeLocal ufl;
+    @EJB
     private StudentsFacadeLocal sfl;
+    @EJB
     private MentorsFacadeLocal mfl;
     
     @Override
@@ -49,14 +51,14 @@ public class CreateAccountServlet extends HttpServlet {
         
         //store user info according to their role
         if(role.equalsIgnoreCase("Student")){
-            url = "student_pages/student_dashboard.html";
+            url = "student_pages/student_dashboard.jsp";
             
             //get student details 
             String name = getName(request);
             String lastName = getLastName(request);
             
             //store the student to database
-            Students std = createStudent(name,lastName);
+            Students std = createStudent(email,name,lastName);
             sfl.create(std);
             
             
@@ -95,7 +97,7 @@ public class CreateAccountServlet extends HttpServlet {
     }
 
     private String getName(HttpServletRequest request) {
-        String name = request.getParameter("firstName");
+        String name = request.getParameter("name");
         
         return name;
     }
@@ -106,12 +108,16 @@ public class CreateAccountServlet extends HttpServlet {
         return lastName;
     }
 
-    private Students createStudent(String name, String lastName) {
+    private Students createStudent(String email, String name, String lastName) {
         Students s = new Students();
         
         //pass
-        s.setFirstName(lastName);
-        s.setLastName(lastName);
+        s.setEmail("123@me.con");
+        s.setFirstName("Okay");
+        s.setLastName("Mlazi");
+        s.setInterest("None");
+        s.setStudy("None");
+        s.setCv("None");
         
         return s;
     }
@@ -119,9 +125,18 @@ public class CreateAccountServlet extends HttpServlet {
     private Mentors createMentor(String name, String lastName) {
         Mentors m = new Mentors();
         
-        ///
+        //
+        m.setEmail("Email");
         m.setFirstName(name);
-        m.setLastName(lastName);
+        m.setLastName("Last Name");
+        
+        m.setLocation("Location");
+        m.setExpertise("Expertise");
+        m.setExperience("Experience");
+        m.setEducation("education");
+        m.setAvailability("Available");
+        m.setBio("bio");
+        m.setMentorshipApproach("Approach");
         
         return m;
     }
