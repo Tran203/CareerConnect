@@ -106,6 +106,29 @@ nav ul li a {
   border-radius: 5px;
 }
 
+.form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form label[for="resume-cv"] {
+  text-align: left;
+}
+
+.form textarea {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+  width: 100%;
+}
+
+.form .textarea-container {
+  display: flex;
+  gap: 10px;
+}
+
 .form button {
   padding: 10px 20px;
   background-color: #333;
@@ -134,6 +157,7 @@ footer {
   }
 
   .form input,
+  .form textarea,
   .form button {
     width: 100%;
   }
