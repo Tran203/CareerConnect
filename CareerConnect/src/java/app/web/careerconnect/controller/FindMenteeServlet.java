@@ -37,7 +37,7 @@ public class FindMenteeServlet extends HttpServlet {
         session.setAttribute("stdList", stdList);
 
         //request dispatcher
-        RequestDispatcher disp = request.getRequestDispatcher("mentor_pages/mentee.html");
+        RequestDispatcher disp = request.getRequestDispatcher("mentor_pages/find_mentee.jsp");
         disp.forward(request, response);
     }
 }

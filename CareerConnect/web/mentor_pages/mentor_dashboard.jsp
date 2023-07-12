@@ -39,19 +39,19 @@
       <div class="card">
         <h2>Virtual Meetings</h2>
         <p>Schedule virtual meetings or discussions with mentees through integrated video conferencing tools.</p>
-        <a href="schedule.html" class="btn">Schedule Meetings</a>
+        <a href="mentor_pages/schedule.html" class="btn">Schedule Meetings</a>
       </div>
 
       <div class="card">
         <h2>Resources and Materials</h2>
         <p>Access mentorship resources, industry insights, and recommended readings to enhance the mentorship experience.</p>
-        <a href="#" class="btn">Access Resources</a>
+        <a href="mentor_pages/resources.html" class="btn">Access Resources</a>
       </div>
 
       <div class="card">
         <h2>Q&A and Forums</h2>
         <p>Participate in discussions, answer students' questions, and share valuable advice in the mentorship community.</p>
-        <a href="reply.html" class="btn">Join Discussions</a>
+        <a href="mentor_pages/reply.html" class="btn">Join Discussions</a>
       </div>
     </div>
   </section>

@@ -37,7 +37,7 @@
                         <img src="avatar1.png" alt="Mentor Avatar">
                     </div>
                     <div class="mentor-info">
-                        <h2>Mentor <%=m.getFirstName()%></h2>
+                        <h2>Mentor <%=m.getFirstName()%> <%=m.getLastName()%></h2>
                         <p>Field of Expertise</p>
                         <p>Experience: 5 years</p>
                         <p>Location: City, Country</p>
