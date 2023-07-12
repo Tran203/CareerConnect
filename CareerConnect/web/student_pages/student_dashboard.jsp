@@ -38,17 +38,17 @@
       <div class="card">
         <h2>Mentors</h2>
         <p>Connect with mentors in your field of interest.</p>
-        <a href="find_mentor.html" class="btn">Find Mentors</a>
+        <a href="FindMentorServlet.do" class="btn">Find Mentors</a>
       </div>
       <div class="card">
         <h2>Jobs</h2>
         <p>Browse and apply for job opportunities.</p>
-        <a href="browse_job.html" class="btn">Browse Jobs</a>
+        <a href="student_pages/browse_job.html" class="btn">Browse Jobs</a>
       </div>
       <div class="card">
         <h2>Events</h2>
         <p>Discover upcoming events and workshops.</p>
-        <a href="events.html" class="btn">Explore Events</a>
+        <a href="student_pages/events.html" class="btn">Explore Events</a>
       </div>
       <div class="card">
         <h2>Skills Assessment</h2>
@@ -58,7 +58,7 @@
       <div class="card">
         <h2>Discussions and Forums</h2>
         <p>Engage in discussions with mentors and fellow students.</p>
-        <a href="discussion.html" class="btn">Join Discussions</a>
+        <a href="student_pages/discussion.html" class="btn">Join Discussions</a>
       </div>
     </div>
   </section>
