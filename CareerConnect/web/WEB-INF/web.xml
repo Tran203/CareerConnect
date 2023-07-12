@@ -8,6 +8,14 @@
         <servlet-name>AccountLoginServlet</servlet-name>
         <servlet-class>app.web.careerconnect.controller.AccountLoginServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>FindMentorServlet</servlet-name>
+        <servlet-class>app.web.careerconnect.controller.FindMentorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FindMenteeServlet</servlet-name>
+        <servlet-class>app.web.careerconnect.controller.FindMenteeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateAccountServlet</servlet-name>
         <url-pattern>/CreateAccountServlet.do</url-pattern>
@@ -15,6 +23,14 @@
     <servlet-mapping>
         <servlet-name>AccountLoginServlet</servlet-name>
         <url-pattern>/AccountLoginServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindMentorServlet</servlet-name>
+        <url-pattern>/FindMentorServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FindMenteeServlet</servlet-name>
+        <url-pattern>/FindMenteeServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

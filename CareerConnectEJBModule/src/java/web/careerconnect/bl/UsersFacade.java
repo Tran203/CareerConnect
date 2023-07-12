@@ -33,19 +33,16 @@ public class UsersFacade extends AbstractFacade<Users> implements UsersFacadeLoc
     @Override
     public Users findAccount(String email, String password) {
         // Query
-        Query query = em.createQuery("SELECT U FROM Users U WHERE U.email = :email AND U.password = :password");
+        Query query = em.createQuery("SELECT u FROM Users u WHERE u.email =:email");
         // Variables to check
         query.setParameter("email", email);
-        query.setParameter("password", password);
+        //query.setParameter("password", password);
 
-        try {
-            // Return user account if found
-            Users u = (Users) query.getSingleResult();
-            return u;
-        } catch (NoResultException e) {
-            // Return null if no result found
-            return null;
-        }
+        // Check if the user account was found
+        Users user = (Users)query.getSingleResult();
+        
+
+        return user;
     }
 
 }
