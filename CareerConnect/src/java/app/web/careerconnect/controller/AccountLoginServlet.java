@@ -44,18 +44,16 @@ public class AccountLoginServlet extends HttpServlet {
         //get user basic login details
         String email = request.getParameter("email");
         String password = request.getParameter("password");
-        Long id = Long.parseLong("51");
 
         //find user account
-        Users user = ufl.find(id);
+        Users user = ufl.findAccount(email, password);
 
         if (user != null) {
             if (user.getType().equalsIgnoreCase("Student")) {
                 url = "student_pages/student_dashboard.jsp";
                 
                 //get the student info
-                id = Long.parseLong("2");
-                Students std = sfl.find(id);
+                Students std = sfl.findStudentUsingEmail(email);
                 
                 //pass info to the session
                 session.setAttribute("std", std);
@@ -63,8 +61,7 @@ public class AccountLoginServlet extends HttpServlet {
                 url = "mentor_pages/mentor_dashboard.jsp";
                 
                 //get mentor's info
-                id = Long.parseLong("52");
-                Mentors m = mfl.find(id);
+                Mentors m = mfl.findMentorUsingEmail(email);
                 
                 //pass info to the session
                 session.setAttribute("mentor", m);

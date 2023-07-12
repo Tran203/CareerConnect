@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+c<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -27,8 +27,8 @@
     <div class="form-container">
       <form class="form" action="AccountLoginServlet.do" method="POST">
         <h2>Login</h2>
-        <input type="email" placeholder="Email Address" required>
-        <input type="password" placeholder="Password" required>
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
         <button type="submit">Log In</button>
       </form>
     </div>

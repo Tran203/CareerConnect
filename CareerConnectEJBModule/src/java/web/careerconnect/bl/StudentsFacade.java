@@ -32,7 +32,7 @@ public class StudentsFacade extends AbstractFacade<Students> implements Students
     @Override
     public Students findStudentUsingEmail(String email) {
         //Query
-        Query query = em.createQuery("SELECT S FROM Students S WHERE S.email = :email");
+        Query query = em.createQuery("SELECT S FROM Students S WHERE S.email =:email");
         //variables to check
         query.setParameter("email", email);
         
