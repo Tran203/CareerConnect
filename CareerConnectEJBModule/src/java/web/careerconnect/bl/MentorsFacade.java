@@ -7,7 +7,9 @@ package web.careerconnect.bl;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import web.careerconnect.entities.Mentors;
+import web.careerconnect.entities.Students;
 
 /**
  *
@@ -26,6 +28,19 @@ public class MentorsFacade extends AbstractFacade<Mentors> implements MentorsFac
 
     public MentorsFacade() {
         super(Mentors.class);
+    }
+
+    @Override
+    public Mentors findMentorUsingEmail(String email) {
+        //Query
+        Query query = em.createQuery("SELECT M FROM Mentors M WHERE M.email = :email");
+        //variables to check
+        query.setParameter("email", email);
+        
+        //return student
+        Mentors m = (Mentors) query.getSingleResult();
+        
+        return m;
     }
     
 }

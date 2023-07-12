@@ -4,13 +4,25 @@
         <servlet-name>CreateAccountServlet</servlet-name>
         <servlet-class>app.web.careerconnect.controller.CreateAccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccountLoginServlet</servlet-name>
+        <servlet-class>app.web.careerconnect.controller.AccountLoginServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateAccountServlet</servlet-name>
         <url-pattern>/CreateAccountServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccountLoginServlet</servlet-name>
+        <url-pattern>/AccountLoginServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error_pages/file_not_found.jsp</location>
+    </error-page>
 </web-app>

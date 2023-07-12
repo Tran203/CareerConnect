@@ -22,6 +22,8 @@ public interface StudentsFacadeLocal {
     void remove(Students students);
 
     Students find(Object id);
+    
+    Students findStudentUsingEmail(String email);
 
     List<Students> findAll();
 

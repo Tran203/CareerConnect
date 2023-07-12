@@ -22,6 +22,8 @@ public interface UsersFacadeLocal {
     void remove(Users users);
 
     Users find(Object id);
+    
+    Users findAccount(String email, String password);
 
     List<Users> findAll();
 

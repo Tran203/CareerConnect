@@ -22,6 +22,8 @@ public interface MentorsFacadeLocal {
     void remove(Mentors mentors);
 
     Mentors find(Object id);
+    
+    Mentors findMentorUsingEmail(String email);
 
     List<Mentors> findAll();
 

@@ -7,6 +7,7 @@ package web.careerconnect.bl;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import web.careerconnect.entities.Students;
 
 /**
@@ -26,6 +27,19 @@ public class StudentsFacade extends AbstractFacade<Students> implements Students
 
     public StudentsFacade() {
         super(Students.class);
+    }
+
+    @Override
+    public Students findStudentUsingEmail(String email) {
+        //Query
+        Query query = em.createQuery("SELECT S FROM Students S WHERE S.email = :email");
+        //variables to check
+        query.setParameter("email", email);
+        
+        //return student
+        Students std = (Students) query.getSingleResult();
+        
+        return std;
     }
     
 }
