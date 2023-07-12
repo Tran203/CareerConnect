@@ -38,8 +38,8 @@
                     <input type="text" name="student-number" id="student-number" placeholder="Student Number" required>
                     <input type="email" name="email" id="email" placeholder="Email Address" required>
                     <input type="password" name="password" placeholder="Password" required>
-                    <input type="text" name="field-of-interest" placeholder="Field of Interest" required>
-                    <input type="text" name="educational-background" placeholder="Educational Background" required>
+                    <input type="text" name="interest" placeholder="Field of Interest" required>
+                    <input type="text" name="study" placeholder="Educational Background" required>
 
                     <input type="text" name="goal" id="goal" list="goal-list" placeholder="Your goal" required>
                     <datalist id="goal-list">

@@ -66,10 +66,11 @@ public class AccountLoginServlet extends HttpServlet {
                 //pass info to the session
                 session.setAttribute("mentor", m);
             }
-        }else{
-            //account does not exist
-            url = "error_pages/Account_Not_Found.jsp";
         }
+//        }else{
+//            //account does not exist
+//            url = "error_pages/account_not_found.jsp";
+//        }
         
         //request dispatcher
         RequestDispatcher disp = request.getRequestDispatcher(url);
