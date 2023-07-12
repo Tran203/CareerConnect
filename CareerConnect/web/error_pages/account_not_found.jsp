@@ -64,8 +64,8 @@
         <p>The account you are trying to login with does not exist in our database.</p>
         <p>Please check your credentials or create a new account.</p>
         <div class="buttons">
-            <a href="..login.jsp" class="button">Try Login Again</a>
-            <a href="..register.jsp" class="button">Register New Account</a>
+            <a href="./login.jsp" class="button">Try Login Again</a>
+            <a href="./registration.jsp" class="button">Register New Account</a>
         </div>
     </div>
 </body>

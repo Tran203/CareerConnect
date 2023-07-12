@@ -69,12 +69,18 @@ public class CreateAccountServlet extends HttpServlet {
             session.setAttribute("std", std);
 
         } else if (role.equalsIgnoreCase("Mentor")) {
-            url = "mentor_pages/mentor_dashboard.html";
+            url = "mentor_pages/mentor_dashboard.jsp";
 
-            //get mentor details 
+            //get mentor details
+            String location = request.getParameter("location");
+            String expertise = request.getParameter("expertise");
+            String exprience = request.getParameter("exprience");
+            String education = request.getParameter("education");;
+            String availability = request.getParameter("availability");
+            String bio = request.getParameter("bio");
 
             //store mentor info to database
-            Mentors m = createMentor(name, lastName);
+            Mentors m = createMentor(email,name,lastName,location,expertise,exprience, education, availability, bio);
             mfl.create(m);
 
             session.setAttribute("mentor", m);
@@ -111,20 +117,20 @@ public class CreateAccountServlet extends HttpServlet {
         return s;
     }
 
-    private Mentors createMentor(String name, String lastName) {
+    private Mentors createMentor(String email, String name, String lastName, String location, String expertise, String exprience, String education, String availability, String bio) {
         Mentors m = new Mentors();
 
         //
-        m.setEmail("Email");
+        m.setEmail(email);
         m.setFirstName(name);
-        m.setLastName("Last Name");
+        m.setLastName(lastName);
 
-        m.setLocation("Location");
-        m.setExpertise("Expertise");
-        m.setExperience("Experience");
-        m.setEducation("education");
-        m.setAvailability("Available");
-        m.setBio("bio");
+        m.setLocation(location);
+        m.setExpertise(expertise);
+        m.setExperience(exprience);
+        m.setEducation(education);
+        m.setAvailability(availability);
+        m.setBio(bio);
         m.setMentorshipApproach("Approach");
 
         return m;

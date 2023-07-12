@@ -12,7 +12,7 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="mentor_pages/mentor_dashboard.html">About</a></li>
-        <li><a href="registration.html">Registration</a></li>
+        <li><a href="registration.jsp">Registration</a></li>
       </ul>
     </nav>
   </header>

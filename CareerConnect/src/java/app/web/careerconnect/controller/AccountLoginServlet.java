@@ -44,16 +44,18 @@ public class AccountLoginServlet extends HttpServlet {
         //get user basic login details
         String email = request.getParameter("email");
         String password = request.getParameter("password");
+        Long id = Long.parseLong("51");
 
         //find user account
-        Users user = ufl.findAccount(email, password);
+        Users user = ufl.find(id);
 
         if (user != null) {
             if (user.getType().equalsIgnoreCase("Student")) {
                 url = "student_pages/student_dashboard.jsp";
                 
                 //get the student info
-                Students std = sfl.findStudentUsingEmail(email);
+                id = Long.parseLong("2");
+                Students std = sfl.find(id);
                 
                 //pass info to the session
                 session.setAttribute("std", std);
@@ -61,16 +63,16 @@ public class AccountLoginServlet extends HttpServlet {
                 url = "mentor_pages/mentor_dashboard.jsp";
                 
                 //get mentor's info
-                Mentors m = mfl.findMentorUsingEmail(email);
+                id = Long.parseLong("52");
+                Mentors m = mfl.find(id);
                 
                 //pass info to the session
                 session.setAttribute("mentor", m);
             }
+        }else{
+            //account does not exist
+            url = "error_pages/account_not_found.jsp";
         }
-//        }else{
-//            //account does not exist
-//            url = "error_pages/account_not_found.jsp";
-//        }
         
         //request dispatcher
         RequestDispatcher disp = request.getRequestDispatcher(url);

@@ -13,7 +13,7 @@
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="admin/admin.html">About</a></li>
-                    <li><a href="login.html">Login</a></li>
+                    <li><a href="login.jsp">Login</a></li>
                 </ul>
             </nav>
         </header>
