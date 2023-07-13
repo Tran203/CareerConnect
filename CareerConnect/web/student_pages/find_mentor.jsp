@@ -28,8 +28,12 @@
         <section class="find-mentor">
             <h1>Find a Mentor</h1>
             <%
-                for (int i = 0; i < mentorList.size(); i++) {
-                Mentors m = mentorList.get(i);
+                for (int i = 0; i < mentorList.size(); i += 2) {
+                    Mentors mentor1 = mentorList.get(i);
+                    Mentors mentor2 = null;
+                    if (i + 1 < mentorList.size()) {
+                        mentor2 = mentorList.get(i + 1);
+                    }
             %>
             <div class="mentor-list">
                 <div class="mentor-card">
@@ -37,7 +41,7 @@
                         <img src="avatar1.png" alt="Mentor Avatar">
                     </div>
                     <div class="mentor-info">
-                        <h2>Mentor <%=m.getFirstName()%> <%=m.getLastName()%></h2>
+                        <h2>Mentor <%= mentor1.getFirstName() %> <%= mentor1.getLastName() %></h2>
                         <p>Field of Expertise</p>
                         <p>Experience: 5 years</p>
                         <p>Location: City, Country</p>
@@ -47,12 +51,13 @@
                         </div>
                     </div>
                 </div>
+                <% if (mentor2 != null) { %>
                 <div class="mentor-card">
                     <div class="mentor-avatar">
                         <img src="avatar2.png" alt="Mentor Avatar">
                     </div>
                     <div class="mentor-info">
-                        <h2>Mentor <%=m.getFirstName()%></h2>
+                        <h2>Mentor <%= mentor2.getFirstName() %></h2>
                         <p>Field of Expertise</p>
                         <p>Experience: 7 years</p>
                         <p>Location: City, Country</p>
@@ -62,8 +67,9 @@
                         </div>
                     </div>
                 </div>
+                <% } %>
             </div>
-                        <br><br>
+            <br><br>
             <%
                 }
             %>

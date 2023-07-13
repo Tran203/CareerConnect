@@ -53,7 +53,7 @@
       <div class="card">
         <h2>Skills Assessment</h2>
         <p>Evaluate your current skills and identify areas for improvement.</p>
-        <a href="#" class="btn">Take Assessment</a>
+        <a href="student_pages/assessment.jsp" class="btn">Take Assessment</a>
       </div>
       <div class="card">
         <h2>Discussions and Forums</h2>
