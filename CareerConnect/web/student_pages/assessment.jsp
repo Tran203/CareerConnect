@@ -23,7 +23,7 @@
             <h1>Skills Assessment</h1>
             <div class="assessment-form">
                 <h2>Take the Assessment</h2>
-                <form action="SkillsAssessmentServlet.do" method="post">
+                <form action="../SkillsAssessmentServlet.do" method="post">
                     <div class="question">
                         <h1>Problem Solving</h1>
                         <p>The ability to identify and solve problems efficiently.</p>

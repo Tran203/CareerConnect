@@ -53,7 +53,7 @@ public class SkillsAssessmentServlet extends HttpServlet {
         request.setAttribute("skillsToImprove", skillsToImprove);
 
         // Forward to the result page
-        RequestDispatcher dispatcher = request.getRequestDispatcher("student_pages/student_dashboard.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("student_pages/ass.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -90,6 +90,21 @@ public class SkillsAssessmentServlet extends HttpServlet {
                 return "Critical thinking";
             default:
                 return "";
+        }
+    }
+
+    private String generateReport(List<String> skillsToImprove) {
+        // Implement the logic to generate the report or feedback based on the skills to improve
+        // Return the report as a string
+        // Example:
+        if (skillsToImprove.isEmpty()) {
+            return "Congratulations! Your skills are in line with the requirements for your course.";
+        } else {
+            StringBuilder report = new StringBuilder("You should work on improving the following skills:\n");
+            for (String skill : skillsToImprove) {
+                report.append("- ").append(skill).append("\n");
+            }
+            return report.toString();
         }
     }
     
