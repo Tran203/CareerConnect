@@ -59,10 +59,11 @@ public class CreateAccountServlet extends HttpServlet {
             //get student details 
             String interest = request.getParameter("interest");
             String study = request.getParameter("study");
+            String goal = request.getParameter("goal");
             String cv = request.getParameter("cv");
 
             //store the student to database
-            Students std = createStudent(email, name, lastName, interest, study, cv);
+            Students std = createStudent(email, name, lastName, interest, study,goal, cv);
             sfl.create(std);
 
             //pass details for log in 
@@ -103,7 +104,7 @@ public class CreateAccountServlet extends HttpServlet {
         return u;
     }
 
-    private Students createStudent(String email, String name, String lastName, String interest, String study, String cv) {
+    private Students createStudent(String email, String name, String lastName, String interest, String study, String goal, String cv) {
         Students s = new Students();
 
         //pass
@@ -112,6 +113,7 @@ public class CreateAccountServlet extends HttpServlet {
         s.setLastName(lastName);
         s.setInterest(interest);
         s.setStudy(study);
+        s.setGoal(goal);
         s.setCv("None");
 
         return s;

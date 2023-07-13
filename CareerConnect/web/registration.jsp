@@ -38,8 +38,21 @@
                     <input type="text" name="student-number" id="student-number" placeholder="Student Number" required>
                     <input type="email" name="email" id="email" placeholder="Email Address" required>
                     <input type="password" name="password" placeholder="Password" required>
-                    <input type="text" name="interest" placeholder="Field of Interest" required>
-                    <input type="text" name="study" placeholder="Educational Background" required>
+
+                    
+                    <input type="text" name="educational-background" id="educational-background" placeholder="Educational background" list="education-list" required>
+                    <datalist id="education-list">
+                        <option value="Diploma in Computer Science"></option>
+                        <option value="Diploma in Informatics"></option>
+                        <option value="Diploma in Information Technology"></option>
+                        <option value="Diploma in Computer Systems Engineering"></option>
+                    </datalist>
+
+                    
+                    <input type="text" name="field-of-interest" id="field-of-interest" placeholder="Field of interest" list="field-list" required>
+                    <datalist id="field-list">
+                        <!-- Options will be dynamically populated based on the selected educational background -->
+                    </datalist>
 
                     <input type="text" name="goal" id="goal" list="goal-list" placeholder="Your goal" required>
                     <datalist id="goal-list">
@@ -51,7 +64,7 @@
                     </datalist>
 
                     <label for="resume-cv">Upload your CV/Resume (Accepted formats: .pdf, .doc, .docx)</label>
-                    <input type="file" name="resume-cv" id="resume-cv" accept=".pdf,.doc,.docx" >
+                    <input type="file" name="resume-cv" id="resume-cv" accept=".pdf,.doc,.docx">
 
                     <input type="hidden" name="role" value="Student">
                     <button type="submit">Register as Student</button>
@@ -121,6 +134,41 @@
                 const studentNumber = studentNumberInput.value;
                 const email = `${studentNumber}@tut4life.ac.za`;
                 emailInput.value = email;
+            });
+
+            const educationInput = document.getElementById('educational-background');
+            const fieldInput = document.getElementById('field-of-interest');
+            const fieldOptions = document.getElementById('field-list');
+
+            educationInput.addEventListener('change', () => {
+                const selectedEducation = educationInput.value;
+                fieldOptions.innerHTML = '';
+
+                if (selectedEducation === 'Diploma in Computer Science') {
+                    fieldOptions.innerHTML += `
+      <option value="Software Development"></option>
+      <option value="Data Science"></option>
+      <option value="Cybersecurity"></option>
+    `;
+                } else if (selectedEducation === 'Diploma in Informatics') {
+                    fieldOptions.innerHTML += `
+      <option value="Web Development"></option>
+      <option value="Database Management"></option>
+      <option value="Business Analysis"></option>
+    `;
+                } else if (selectedEducation === 'Diploma in Information Technology') {
+                    fieldOptions.innerHTML += `
+      <option value="Network Administration"></option>
+      <option value="IT Support"></option>
+      <option value="Cloud Computing"></option>
+    `;
+                } else if (selectedEducation === 'Diploma in Computer Systems Engineering') {
+                    fieldOptions.innerHTML += `
+      <option value="Embedded Systems"></option>
+      <option value="Robotics"></option>
+      <option value="IoT Development"></option>
+    `;
+                }
             });
         </script>
         <script src="script/registration.js"></script>

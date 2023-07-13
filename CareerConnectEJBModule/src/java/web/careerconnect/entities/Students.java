@@ -30,18 +30,20 @@ public class Students implements Serializable {
     private String lastName;
     private String interest;
     private String study;
+    private String goal;
     private String cv;
 
     public Students() {
     }
 
-    public Students(Long id, String email, String firstName, String lastName, String interest, String study, String cv) {
+    public Students(Long id, String email, String firstName, String lastName, String interest, String study, String goal, String cv) {
         this.id = id;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;
         this.interest = interest;
         this.study = study;
+        this.goal = goal;
         this.cv = cv;
     }
 
@@ -85,6 +87,14 @@ public class Students implements Serializable {
         this.study = study;
     }
 
+    public String getGoal() {
+        return goal;
+    }
+
+    public void setGoal(String goal) {
+        this.goal = goal;
+    }
+
     public String getCv() {
         return cv;
     }
@@ -92,8 +102,8 @@ public class Students implements Serializable {
     public void setCv(String cv) {
         this.cv = cv;
     }
-    
-    
+
+   
     
     public Long getId() {
         return id;

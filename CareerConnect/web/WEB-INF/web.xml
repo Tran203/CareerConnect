@@ -16,6 +16,18 @@
         <servlet-name>FindMenteeServlet</servlet-name>
         <servlet-class>app.web.careerconnect.controller.FindMenteeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SkillAssessmentServlet</servlet-name>
+        <servlet-class>SkillAssessmentServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SkillAssessmentServlet1</servlet-name>
+        <servlet-class>app.web.careerconnect.controller.SkillAssessmentServlet1</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SkillsAssessmentServlet</servlet-name>
+        <servlet-class>app.web.careerconnect.controller.SkillsAssessmentServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateAccountServlet</servlet-name>
         <url-pattern>/CreateAccountServlet.do</url-pattern>
@@ -32,13 +44,21 @@
         <servlet-name>FindMenteeServlet</servlet-name>
         <url-pattern>/FindMenteeServlet.do</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SkillAssessmentServlet</servlet-name>
+        <url-pattern>/SkillAssessmentServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SkillAssessmentServlet1</servlet-name>
+        <url-pattern>/SkillAssessmentServlet1.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SkillsAssessmentServlet</servlet-name>
+        <url-pattern>/SkillsAssessmentServlet.do</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
-    <error-page>
-        <error-code>404</error-code>
-        <location>/error_pages/file_not_found.jsp</location>
-    </error-page>
 </web-app>
