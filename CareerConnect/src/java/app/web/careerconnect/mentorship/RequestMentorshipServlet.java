@@ -41,7 +41,7 @@ public class RequestMentorshipServlet extends HttpServlet {
         
         
         //request dispatcher
-        RequestDispatcher disp = request.getRequestDispatcher("mentor_pages/find_mentor.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("student_pages/request_mentorship_outcome.jsp");
         disp.forward(request, response);
     }
 

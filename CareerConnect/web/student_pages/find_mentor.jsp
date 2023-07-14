@@ -24,9 +24,9 @@
     <nav>
       <ul>
         <li><a href="./NavigationServlet.do?role=student_dashboard">Dashboard</a></li>
-        <li><a href="./NavigationServlet.do?role=profile">Profile</a></li>
-        <li><a href="./NavigationServlet.do?role=mentors">Mentors</a></li>
-        <li><a href="./NavigationServlet.do?role=jobs">Jobs</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Mentors</a></li>
+        <li><a href="#">Jobs</a></li>
         <li><a href="./LogoutServlet.do">Logout</a></li>
       </ul>
     </nav>
@@ -85,7 +85,7 @@
           <p>Experience: <%= mentor2.getExperience()%></p>
           <p>Location: <%= mentor2.getLocation()%></p>
           <div class="mentor-actions">
-            <a href="#" class="btn"><i class="fas fa-user-plus"></i> Request Mentorship</a>
+            <a href="./RequestMentorshipServlet.do?mentorEmail=<%= mentor2.getEmail()%>" class="btn"><i class="fas fa-user-plus"></i> Request Mentorship</a>
             <a href="#" class="btn"><i class="fas fa-envelope"></i> Send Message</a>
           </div>
         </div>
