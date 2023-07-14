@@ -1,145 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assessment.css">
-    <title>Skills Assessment</title>
-  </head>
-  <body>
-    <header>
-      <nav>
-        <ul>
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Mentors</a></li>
-          <li><a href="#">Jobs</a></li>
-          <li><a href="#">Logout</a></li>
-        </ul>
-      </nav>
-    </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mentorship Requests</title>
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <section class="skills-assessment">
-      <h1>Skills Assessment</h1>
-      <div class="assessment-form">
-        <h2>Take the Assessment</h2>
-        <form action="#" method="post" id="assessmentForm">
-          <div class="question">
-            <h1>Problem Solving</h1>
-            <p>The ability to identify and solve problems efficiently.</p>
-            <label>
-              Rate your skill level:
-              <select name="problemSolvingResponse">
-                <option value="0">No experience</option>
-                <option value="1">Beginner</option>
-                <option value="2">Intermediate</option>
-                <option value="3">Advanced</option>
-              </select>
-            </label>
-            <button type="button" class="btn" id="nextButton1">Next</button>
-          </div>
+    /* Set base font and styles */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
 
-          <div class="question">
-            <h1>Programming</h1>
-            <p>The ability to write and understand programming code.</p>
-            <label>
-              Rate your skill level:
-              <select name="programingResponse">
-                <option value="0">No experience</option>
-                <option value="1">Beginner</option>
-                <option value="2">Intermediate</option>
-                <option value="3">Advanced</option>
-              </select>
-            </label>
-            <button type="button" class="btn" id="nextButton2">Next</button>
-          </div>
-          <div class="question">
-            <h1>Communication</h1>
-            <p>The ability to effectively communicate ideas and information.</p>
-            <label>
-              Rate your skill level:
-              <select name="communicationResponse">
-                <option value="0">No experience</option>
-                <option value="1">Beginner</option>
-                <option value="2">Intermediate</option>
-                <option value="3">Advanced</option>
-              </select>
-            </label>
-            <button type="button" class="btn" id="nextButton3">Next</button>
-          </div>
+    /* Set header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
 
-          <div class="question">
-            <h1>Teamwork</h1>
-            <p>The ability to work collaboratively in a team environment.</p>
-            <label>
-              Rate your skill level:
-              <select name="teamworkResponse">
-                <option value="0">No experience</option>
-                <option value="1">Beginner</option>
-                <option value="2">Intermediate</option>
-                <option value="3">Advanced</option>
-              </select>
-            </label>
-            <button type="button" class="btn" id="nextButton4">Next</button>
-          </div>
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
 
-          <div class="question">
-            <h1>Critical thinking</h1>
-            <p>The ability to think critically and make sound judgments.</p>
-            <label>
-              Rate your skill level:
-              <select name="criticalThinkingResponse">
-                <option value="0">No experience</option>
-                <option value="1">Beginner</option>
-                <option value="2">Intermediate</option>
-                <option value="3">Advanced</option>
-              </select>
-            </label>
-            <button type="submit" class="btn" id="submitButton">Submit</button>
-          </div>
-        </form>
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Set mentorship requests section styles */
+    .mentorship-requests {
+      padding: 50px;
+    }
+
+    .mentorship-requests h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    .request {
+      background-color: #f9f9f9;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+
+    .request h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .request p {
+      margin-bottom: 8px;
+    }
+
+    .actions {
+      margin-top: 10px;
+    }
+
+    .actions button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    /* Popup card styles */
+    .popup-card {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    .popup-content h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .popup-content p {
+      margin-bottom: 8px;
+    }
+
+    .popup-content .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 768px) {
+      .mentorship-requests {
+        padding: 30px;
+      }
+
+      .mentorship-requests h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Mentorship Requests</a></li>
+        <li><a href="#">Notifications</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="mentorship-requests">
+    <h1>Mentorship Requests</h1>
+
+    <!-- Mentorship Request 1 -->
+    <div class="request">
+      <h2>Request from Student A</h2>
+      <p>Field: Computer Science</p>
+      <p>Interests: Web Development, Data Science</p>
+      <p>Goal: To become a software engineer</p>
+      <div class="actions">
+        <button class="btn-accept">Accept</button>
+        <button class="btn-decline">Decline</button>
       </div>
-    </section>
+    </div>
 
-    <footer>
-      <p>&copy; 2023 CareerConnect. All rights reserved.</p>
-    </footer>
+    <!-- Mentorship Request 2 -->
+    <div class="request">
+      <h2>Request from Student B</h2>
+      <p>Field: Information Technology</p>
+      <p>Interests: Cybersecurity, Network Administration</p>
+      <p>Goal: To pursue a career in cybersecurity</p>
+      <div class="actions">
+        <button class="btn-accept">Accept</button>
+        <button class="btn-decline">Decline</button>
+      </div>
+    </div>
 
-    <script>
-      const questions = document.querySelectorAll('.question');
-      const nextButtons = document.querySelectorAll('.btn');
-      const submitButton = document.getElementById('submitButton');
-      const form = document.getElementById('assessmentForm');
-      let currentQuestion = 0;
+    <!-- Add more mentorship requests here -->
 
-      function showQuestion(index) {
-        questions.forEach((question, idx) => {
-          if (idx === index) {
-            question.style.display = 'block';
-          } else {
-            question.style.display = 'none';
-          }
-        });
+  </section>
 
-        if (index === questions.length - 1) {
-          nextButtons[index].style.display = 'none';
-          submitButton.style.display = 'block';
-        } else {
-          nextButtons[index].style.display = 'block';
-          submitButton.style.display = 'none';
-        }
-      }
+  <!-- Popup card -->
+  <div class="popup-card">
+    <div class="popup-content">
+      <h2>Mentee Profile</h2>
+      <p><strong>Name:</strong> Student A</p>
+      <p><strong>Email:</strong> studentA@example.com</p>
+      <p><strong>Educational Background:</strong> Bachelor's Degree in Computer Science</p>
+      <a href="#" class="btn download-cv">Download CV</a>
+      <a href="#" class="btn close-popup">Close</a>
+    </div>
+  </div>
 
-      function showNextQuestion() {
-        currentQuestion++;
-        showQuestion(currentQuestion);
-      }
+  <script>
+    // Popup functionality
+    const viewProfileButtons = document.querySelectorAll('.view-profile');
+    const popupCard = document.querySelector('.popup-card');
+    const closePopupButton = document.querySelector('.close-popup');
 
-      nextButtons.forEach((button, index) => {
-        button.addEventListener('click', showNextQuestion);
+    viewProfileButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        popupCard.style.display = 'flex';
       });
+    });
 
-      showQuestion(currentQuestion);
-    </script>
-  </body>
+    closePopupButton.addEventListener('click', () => {
+      popupCard.style.display = 'none';
+    });
+
+    // Accept and Decline button functionality
+    const acceptButtons = document.querySelectorAll('.btn-accept');
+    const declineButtons = document.querySelectorAll('.btn-decline');
+
+    acceptButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        // Accept logic
+      });
+    });
+
+    declineButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        // Decline logic
+      });
+    });
+  </script>
+</body>
 </html>
