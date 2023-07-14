@@ -28,7 +28,7 @@ public class SkillsAssessmentServlet extends HttpServlet {
         
         //Get reponses & Retrieve skill ratings submitted by the student
         int[] ratings = new int[5];
-        List<String> responses = new ArrayList<>(Arrays.asList("problemSolvingResponse", "programingResponse", "communicationResponse", "teamworkResponse", "criticalThinkungResponse"));
+        List<String> responses = new ArrayList<>(Arrays.asList("problemSolvingResponse", "programingResponse", "communicationResponse", "teamworkResponse", "criticalThinkingResponse"));
         for(int i = 0; i < responses.size(); i++){
             int rating = Integer.parseInt(request.getParameter(responses.get(i)));
             ratings[i] = rating;
@@ -53,7 +53,7 @@ public class SkillsAssessmentServlet extends HttpServlet {
         request.setAttribute("skillsToImprove", skillsToImprove);
 
         // Forward to the result page
-        RequestDispatcher dispatcher = request.getRequestDispatcher("student_pages/ass.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("student_pages/assessment_result.jsp");
         dispatcher.forward(request, response);
     }
 
