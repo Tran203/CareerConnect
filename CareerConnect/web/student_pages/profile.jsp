@@ -15,10 +15,11 @@
   <header>
     <nav>
       <ul>
-        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="./NavigationServlet.do?role=student_dashboard">Dashboard</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Mentors</a></li>
         <li><a href="#">Jobs</a></li>
-        <li><a href="#">Messages</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="./LogoutServlet.do">Logout</a></li>
       </ul>
     </nav>
   </header>

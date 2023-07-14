@@ -17,10 +17,6 @@
         <servlet-class>app.web.careerconnect.controller.FindMenteeServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>SkillAssessmentServlet</servlet-name>
-        <servlet-class>SkillAssessmentServlet</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>SkillAssessmentServlet1</servlet-name>
         <servlet-class>app.web.careerconnect.controller.SkillAssessmentServlet1</servlet-class>
     </servlet>
@@ -59,10 +55,6 @@
     <servlet-mapping>
         <servlet-name>FindMenteeServlet</servlet-name>
         <url-pattern>/FindMenteeServlet.do</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>SkillAssessmentServlet</servlet-name>
-        <url-pattern>/SkillAssessmentServlet.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>SkillAssessmentServlet1</servlet-name>

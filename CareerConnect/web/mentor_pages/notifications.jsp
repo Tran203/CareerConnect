@@ -104,8 +104,8 @@
             <nav>
                 <ul>
                     <li><a href="./NavigationServlet.do?role=mentor_dashboard">Dashboard</a></li>
-                    <li><a href="./NavigationServlet.do?role=profile">Profile</a></li>
-                    <li><a href="./NavigationServlet.do?role=mentees">Mentees</a></li>
+                    <li><a href="#">Mentees</a></li>
+                    <li><a href="#">Profile</a></li>
                     <li><a href="./LogoutServlet.do">Logout</a></li>
                 </ul>
             </nav>

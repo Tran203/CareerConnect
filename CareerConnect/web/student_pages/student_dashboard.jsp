@@ -18,7 +18,6 @@
   <header>
     <nav>
       <ul>
-        <li><a href="../index.html">Home</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="#">Mentors</a></li>
         <li><a href="LogoutServlet.do">Logout</a></li>

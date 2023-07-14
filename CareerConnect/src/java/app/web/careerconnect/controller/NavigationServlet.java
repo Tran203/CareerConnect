@@ -25,6 +25,8 @@ public class NavigationServlet extends HttpServlet {
         
         if(navigate.equalsIgnoreCase("student_dashboard")){
             url = "student_pages/student_dashboard.jsp";
+        }else if(navigate.equalsIgnoreCase("mentor_dashboard")){
+            url = "mentor_pages/mentor_dashboard.jsp";
         }
         // FNaviaget to relevent page
         RequestDispatcher dispatcher = request.getRequestDispatcher(url);
