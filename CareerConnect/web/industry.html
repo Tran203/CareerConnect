@@ -1,15 +1,188 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
-<html>
-    <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style/external_form.css">
+  <style>
+    /* Reset default margin and padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Set base font and styles */
+    body {
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    /* Set header styles */
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    nav ul li {
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Set feature section styles */
+    .feature-section {
+      background-color: #f9f9f9;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .feature-card {
+      background-color: #fff;
+      border-radius: 5px;
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .feature-card h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .feature-card .description {
+      font-size: 16px;
+    }
+
+    /* Set form section styles */
+    .form-section {
+      padding: 40px;
+    }
+
+    .form-description {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .form-description h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .form-description p {
+      font-size: 16px;
+    }
+
+    .form-container {
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      padding: 40px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 20px;
+    }
+
+    .form-container button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Responsive styles */
+    @media only screen and (max-width: 768px) {
+      .feature-section,
+      .form-section {
+        padding: 30px;
+      }
+
+      .feature-card,
+      .form-container {
+        padding: 20px;
+      }
+    }
+  </style>
+  <title>Industry Collaborations</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Mentors</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="feature-section">
+    <div class="feature-card">
+      <h3>Industry Collaborations</h3>
+      <p class="description">Explore partnerships with local industries and organizations for guest lectures, industry visits, and research projects.</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="form-description">
+      <h2>Join Us for Industry Collaborations</h2>
+      <p>As an industry professional or representative, we invite you to fill in the form below to express your interest in collaborating with us for guest lectures, industry visits, and research projects. Please provide us with the necessary details to initiate the collaboration process.</p>
+    </div>
+
+    <div class="form-container">
+      <form action="#" method="post">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="company">Company/Organization:</label>
+        <input type="text" id="company" name="company" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 CareerConnect. All rights reserved.</p>
+  </footer>
+</body>
 </html>
+
