@@ -109,6 +109,17 @@
                 border-radius: 5px;
             }
 
+            .new-post button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
             .existing-posts {
                 margin-top: 40px;
             }
@@ -213,23 +224,22 @@
             <h1>Join the Discussion</h1>
             <div class="discussion-forum">
                 <div id="posts-container">
-                    <!-- Existing Posts will be dynamically added here -->
                     <div class="topic">
                         <h2>Topic 1</h2>
-                        <p>Posted by John Doe</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula mi. Ut semper nisl id turpis porta, nec ultricies lectus euismod.</p>
+                        <p>Posted by <em>Faculty Member</em></p>
+                        <p>What are some essential programming languages for an ICT student?</p>
                         <a href="#" class="btn">Join Discussion</a>
                     </div>
                     <div class="topic">
                         <h2>Topic 2</h2>
-                        <p>Posted by Jane Smith</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula mi. Ut semper nisl id turpis porta, nec ultricies lectus euismod.</p>
+                        <p>Posted by <em>Student</em></p>
+                        <p>How can I improve my networking skills for a career in cybersecurity?</p>
                         <a href="#" class="btn">Join Discussion</a>
                     </div>
                     <div class="topic">
                         <h2>Topic 3</h2>
-                        <p>Posted by Alex Johnson</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula mi. Ut semper nisl id turpis porta, nec ultricies lectus euismod.</p>
+                        <p>Posted by <em>Mentor</em></p>
+                        <p>What are some recommended resources for learning machine learning algorithms?</p>
                         <a href="#" class="btn">Join Discussion</a>
                     </div>
                 </div>
@@ -240,21 +250,17 @@
                 <form id="post-form">
                     <textarea id="post-content" placeholder="Write your post here..."></textarea>
                     <br>
-                    <button type="submit">Post</button>
+                    <button type="submit" class="btn">Post</button>
                 </form>
             </div>
-            
-                <h2>Existing Posts</h2>
+
+            <h2>Existing Posts</h2>
             <div class="existing-posts">
                 <!-- Existing Posts will be dynamically added here -->
-                <div class="post">
-                    <h3>Posted by John Doe</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula mi. Ut semper nisl id turpis porta, nec ultricies lectus euismod.</p>
-                    <a href="#" class="btn reply-button">Reply</a>
-                </div>
+
                 <div class="post">
                     <h3>Posted by Jane Smith</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer vitae ligula mi. Ut semper nisl id turpis porta, nec ultricies lectus euismod.</p>
+                    <p>What are some tips for improving productivity while working remotely?</p>
                     <a href="#" class="btn reply-button">Reply</a>
                 </div>
             </div>
@@ -274,7 +280,7 @@
                 if (postContent.trim() !== "") {
                     var postElement = document.createElement("div");
                     postElement.className = "post";
-                    postElement.innerHTML = "<h3>Posted by: John Doe</h3><p>" + postContent + "</p>";
+                    postElement.innerHTML = "<h3>Posted by: Themba Mabena</h3><p>" + postContent + "</p>";
                     postElement.innerHTML += '<a href="#" class="btn reply-button">Reply</a>';
 
                     var existingPosts = document.querySelector(".existing-posts");
@@ -291,6 +297,13 @@
                 }
             });
 
+            // Function to handle the reply button click event
+            function handleReplyButtonClick(replyButton) {
+                var postElement = replyButton.parentNode;
+                showReplyForm(postElement);
+            }
+
+            // Function to show the reply form
             function showReplyForm(parentPostElement) {
                 var replyForm = document.createElement("div");
                 replyForm.className = "reply";
@@ -303,13 +316,14 @@
                 });
             }
 
+            // Function to submit the reply
             function submitReply(parentPostElement, replyForm) {
                 var replyContent = replyForm.querySelector(".reply-content").value;
 
                 if (replyContent.trim() !== "") {
                     var replyElement = document.createElement("div");
                     replyElement.className = "reply";
-                    replyElement.innerHTML = "<h4>Replied by: Mentor</h4><p>" + replyContent + "</p>";
+                    replyElement.innerHTML = "<h4>Replied by: Themba Mabena</h4><p>" + replyContent + "</p>";
                     parentPostElement.appendChild(replyElement);
 
                     // Clear the reply textarea
@@ -319,6 +333,14 @@
                     parentPostElement.removeChild(replyForm);
                 }
             }
+
+            // Add event listeners to the existing reply buttons
+            var replyButtons = document.querySelectorAll(".reply-button");
+            replyButtons.forEach(function (replyButton) {
+                replyButton.addEventListener("click", function () {
+                    handleReplyButtonClick(replyButton);
+                });
+            });
         </script>
     </body>
 </html>
