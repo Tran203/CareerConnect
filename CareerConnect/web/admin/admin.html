@@ -1,76 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="admin.css">
-  <title>Faculty Dashboard</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Profile</a></li>
-        <li><a href="#">Mentorship Program</a></li>
-        <li><a href="#">Student Recommendations</a></li>
-        <li><a href="#">Industry Partnerships</a></li>
-        <li><a href="#">Faculty Resources</a></li>
-        <li><a href="#">Forums</a></li>
-        <li><a href="#">Support</a></li>
-        <li><a href="#">Logout</a></li>
-      </ul>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./style/faculty.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            /* Reset default margin and padding */
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
 
-  <section class="dashboard">
-    <h1>Welcome, Faculty Name!</h1>
+            /* Set base font and styles */
+            body {
+                font-family: Arial, sans-serif;
+                font-size: 16px;
+                line-height: 1.5;
+            }
 
-    <div class="section">
-      <h2>Profile</h2>
-      <p>Add faculty profile information here, such as name, designation, contact details, areas of expertise, and a brief bio.</p>
-      <a href="#" class="btn">View Profile</a>
-    </div>
+            /* Set header styles */
+            header {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+            }
 
-    <div class="section">
-      <h2>Mentorship Program</h2>
-      <p>Manage the mentorship program by matching mentors and mentees, tracking mentorship progress, and administering program logistics.</p>
-      <a href="#" class="btn">Manage Program</a>
-    </div>
+            nav ul {
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+            }
 
-    <div class="section">
-      <h2>Student Recommendations</h2>
-      <p>Provide job recommendations or endorsements for students based on their academic performance, skills, and potential.</p>
-      <a href="#" class="btn">View Recommendations</a>
-    </div>
+            nav ul li {
+                margin-right: 10px;
+            }
 
-    <div class="section">
-      <h2>Industry Partnerships</h2>
-      <p>Showcase collaborations and partnerships between the faculty and industry organizations, including joint research projects, internships, and industry-sponsored programs.</p>
-      <a href="#" class="btn">View Partnerships</a>
-    </div>
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+            }
 
-    <div class="section">
-      <h2>Faculty Resources</h2>
-      <p>Access a repository of resources and professional development materials for faculty members, including research papers, teaching materials, online courses, webinars, and workshops.</p>
-      <a href="#" class="btn">Access Resources</a>
-    </div>
+            /* Set main section styles */
+            .main-section {
+                padding: 40px;
+                text-align: center;
+            }
 
-    <div class="section">
-      <h2>Forums</h2>
-      <p>Engage in discussions, share ideas, and collaborate with other faculty members on various topics related to teaching, research, and mentoring.</p>
-      <a href="#" class="btn">Join Forums</a>
-    </div>
+            .main-section h1 {
+                font-size: 36px;
+                margin-bottom: 20px;
+            }
 
-    <div class="section">
-      <h2>Support</h2>
-      <p>Find contact information and support channels for faculty members to seek assistance, guidance, or technical support related to the mentorship program or other faculty-related matters.</p>
-      <a href="#" class="btn">Get Support</a>
-    </div>
-  </section>
+            .main-section p {
+                font-size: 16px;
+                margin-bottom: 20px;
+            }
 
-  <footer>
-    <p>&copy; 2023 CareerConnect. All rights reserved.</p>
-  </footer>
-</body>
+            .main-section .statistics-card {
+                background-color: #f9f9f9;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+                margin-bottom: 20px;
+                position: relative;
+                cursor: pointer;
+            }
+
+            .main-section .statistics-card h3 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .main-section .statistics-card p {
+                margin-bottom: 10px;
+            }
+
+            /* Popup card styles */
+            .popup-card {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+                width: 400px;
+                z-index: 100;
+                display: none;
+            }
+
+            .popup-card h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .popup-card p {
+                margin-bottom: 10px;
+            }
+
+            .popup-card .close-button {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                cursor: pointer;
+            }
+
+            /* Footer styles */
+            footer {
+                background-color: #333;
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+            }
+
+            .view-button {
+                background-color: #36A2EB;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+            .view-button:hover {
+                background-color: #2696D6;
+            }
+
+            .close-button:hover {
+                background-color: #E65176;
+            }
+
+
+            /* Styles for each chart container */
+            .chart-container {
+                margin-bottom: 20px;
+            }
+        </style>
+        <title>Faculty Utilization</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="./index.html">Home</a></li>
+                    <li><a href="#">Profile</a></li>
+                    <li><a href="#">Students</a></li>
+                    <li><a href="#">Mentors</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="main-section">
+            <h1>Faculty Utilization</h1>
+            <div class="statistics-card" onclick="showPopup('student-engagement')">
+                <h3>Student Engagement Statistics</h3>
+                <p>Gain valuable insights into student engagement through the web application. Track and analyze metrics such as student activity, participation in mentorship programs, and utilization of career development resources. Use these statistics to identify trends, measure student success, and enhance support services.</p>
+                <button class="view-button">View Statistics</button>
+            </div>
+
+            <div class="statistics-card" onclick="showPopup('mentorship-impact')">
+                <h3>Mentorship Impact Analysis</h3>
+                <p>Assess the impact of mentorship programs on student outcomes. Explore mentor-student interactions, monitor mentorship duration and effectiveness, and gather feedback from participants. Leverage this data to continuously improve the mentorship experience and measure the program's contribution to student growth and success.</p>
+                <button class="view-button">View Statistics</button>
+            </div>
+
+            <div class="statistics-card" onclick="showPopup('career-development')">
+                <h3>Career Development Insights</h3>
+                <p>Utilize the web application's career development insights to guide faculty decisions. Analyze student career preferences, job placement rates, and industry connections. This data empowers faculty members to align curricula with industry demands, offer targeted job recommendations, and foster successful transitions from academia to professional careers.</p>
+                <button class="view-button">View Statistics</button>
+            </div>
+        </section>
+
+        <div id="popup-student-engagement" class="popup-card">
+            <h2>Student Engagement Statistics</h2>
+            <div class="chart-container">
+                <canvas id="student-engagement-chart-1"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="student-engagement-chart-2"></canvas>
+            </div>
+            <button class="close-button" onclick="closePopup('student-engagement')">Close</button>
+        </div>
+
+        <div id="popup-mentorship-impact" class="popup-card">
+            <h2>Mentorship Impact Analysis</h2>
+            <div class="chart-container">
+                <canvas id="mentorship-impact-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="mentorship-satisfaction-chart"></canvas>
+            </div>
+            <button class="close-button" onclick="closePopup('mentorship-impact')">Close</button>
+        </div>
+
+        <div id="popup-career-development" class="popup-card">
+            <h2>Career Development Insights</h2>
+            <div class="chart-container">
+                <canvas id="career-preference-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="career-development-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="job-placement-rate-chart"></canvas>
+            </div>
+            <button class="close-button" onclick="closePopup('career-development')">Close</button>
+        </div>
+
+        <footer>
+            <p>&copy; 2023 CareerConnect. All rights reserved.</p>
+        </footer>
+
+        <script>
+            // Generate random data for demo purposes
+            const generateRandomData = () => {
+                return Array.from({length: 5}, () => Math.floor(Math.random() * 100));
+            };
+
+            // Student Engagement Statistics
+            const studentEngagementChart1 = new Chart(document.getElementById('student-engagement-chart-1'), {
+                type: 'bar',
+                data: {
+                    labels: ['Mentorship', 'Job search', 'Skill development', 'Resource Usage', 'Support'],
+                    datasets: [{
+                            label: 'Student Activity',
+                            data: generateRandomData(),
+                            backgroundColor: '#36A2EB',
+                            borderColor: '#36A2EB',
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const studentEngagementChart2 = new Chart(document.getElementById('student-engagement-chart-2'), {
+                type: 'pie',
+                data: {
+                    labels: ['Mentorship', 'Networking', 'Career exploration', 'Job search', 'Skill developmentv'],
+                    datasets: [{
+                            label: 'Mentorship Program Participation',
+                            data: generateRandomData(),
+                            backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#E7E9ED'],
+                            borderColor: '#fff',
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            // Mentorship Impact Analysis
+            const mentorshipImpactChart = new Chart(document.getElementById('mentorship-impact-chart'), {
+                type: 'line',
+                data: {
+                    labels: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5'],
+                    datasets: [{
+                            label: 'Mentorship Impact',
+                            data: generateRandomData(),
+                            backgroundColor: '#36A2EB',
+                            borderColor: '#36A2EB',
+                            borderWidth: 1,
+                            fill: false
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const mentorshipSatisfactionChart = new Chart(document.getElementById('mentorship-satisfaction-chart'), {
+                type: 'doughnut',
+                data: {
+                    labels: ['Very Satisfied', 'Satisfied', 'Neutral', 'Dissatisfied', 'Very Dissatisfied'],
+                    datasets: [{
+                            label: 'Mentorship Satisfaction',
+                            data: generateRandomData(),
+                            backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56', '#4BC0C0', '#E7E9ED'],
+                            borderColor: '#fff',
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    responsive: true
+                }
+            });
+
+            // Career Development Insights
+            const careerPreferenceChart = new Chart(document.getElementById('career-preference-chart'), {
+                type: 'bar',
+                data: {
+                    labels: ['Software Development', 'Web Development', 'Business Analysis', 'Robotics', 'Cybersecurity'],
+                    datasets: [{
+                            label: 'Career Preferences',
+                            data: generateRandomData(),
+                            backgroundColor: '#36A2EB',
+                            borderColor: '#36A2EB',
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const careerDevelopmentChart = new Chart(document.getElementById('career-development-chart'), {
+                type: 'radar',
+                data: {
+                    labels: ['Problem Solving', 'Programming', 'Communication', 'Teamwork', 'Critical Thinking'],
+                    datasets: [{
+                            label: 'Skills Development',
+                            data: generateRandomData(),
+                            backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                            borderColor: '#36A2EB',
+                            borderWidth: 2
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        r: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            const jobPlacementRateChart = new Chart(document.getElementById('job-placement-rate-chart'), {
+                type: 'bar',
+                data: {
+                    labels: ['IT Support', 'Software Development', 'Data Science', 'Cloud Computing', 'Cybersecurity'],
+                    datasets: [{
+                            label: 'Job Placement Rate',
+                            data: generateRandomData(),
+                            backgroundColor: '#36A2EB',
+                            borderColor: '#36A2EB',
+                            borderWidth: 1
+                        }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+
+            function showPopup(popupId) {
+                var popup = document.getElementById('popup-' + popupId);
+                popup.style.display = 'block';
+            }
+
+            function closePopup(popupId) {
+                var popup = document.getElementById('popup-' + popupId);
+                popup.style.display = 'none';
+            }
+        </script>
+    </body>
 </html>
