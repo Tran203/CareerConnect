@@ -1,3 +1,8 @@
+<%@page import="web.careerconnect.entities.Students"%>
+<%
+    Students std = (Students)session.getAttribute("std");
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,27 +29,27 @@
       <h2>Personal Information</h2>
       <div class="profile-data">
         <label for="name">Name:</label>
-        <span id="name">John Doe</span>
+        <span id="name"><%=std.getFirstName()%> <%=std.getLastName()%></span>
       </div>
       <div class="profile-data">
         <label for="email">Email:</label>
-        <span id="email">johndoe@example.com</span>
+        <span id="email"><%=std.getEmail()%></span>
       </div>
       <div class="profile-data">
         <label for="student-number">Student Number:</label>
-        <span id="student-number">123456789</span>
+        <span id="student-number">111</span>
       </div>
       <div class="profile-data">
         <label for="field-of-interest">Field of Interest:</label>
-        <span id="field-of-interest">Software Development</span>
+        <span id="field-of-interest"><%=std.getInterest()%></span>
       </div>
       <div class="profile-data">
         <label for="education-background">Educational Background:</label>
-        <span id="education-background">Diploma in Computer Science</span>
+        <span id="education-background"><%=std.getStudy()%></span>
       </div>
       <div class="profile-data">
         <label for="goal">Goal:</label>
-        <span id="goal">Skill development</span>
+        <span id="goal"><%=std.getGoal()%></span>
       </div>
     </div>
 
@@ -81,3 +86,4 @@
   </footer>
 </body>
 </html>
+
