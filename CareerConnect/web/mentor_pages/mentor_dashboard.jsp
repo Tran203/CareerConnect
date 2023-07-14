@@ -17,7 +17,7 @@
   <header>
     <nav>
       <ul>
-        <li><a href="./index.html">Notifications</a></li>
+        <li><a href="./GetMentorshipRequestsServlet.do">Notifications</a></li>
         <li><a href="#">Students</a></li>
         <li><a href="#">Profile</a></li>
         <li><a href="./LogoutServlet.do">Logout</a></li>
