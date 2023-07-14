@@ -40,7 +40,7 @@
                     <input type="password" name="password" placeholder="Password" required>
 
                     
-                    <input type="text" name="educational-background" id="educational-background" placeholder="Educational background" list="education-list" required>
+                    <input type="text" name="study" id="educational-background" placeholder="Educational background" list="education-list" required>
                     <datalist id="education-list">
                         <option value="Diploma in Computer Science"></option>
                         <option value="Diploma in Informatics"></option>
@@ -49,7 +49,7 @@
                     </datalist>
 
                     
-                    <input type="text" name="field-of-interest" id="field-of-interest" placeholder="Field of interest" list="field-list" required>
+                    <input type="text" name="interest" id="field-of-interest" placeholder="Field of interest" list="field-list" required>
                     <datalist id="field-list">
                         <!-- Options will be dynamically populated based on the selected educational background -->
                     </datalist>
@@ -91,15 +91,15 @@
                         <option value="Western Cape">Western Cape</option>
                     </datalist>
 
-                    <input type="text" name="field-of-expertise" placeholder="Field of Expertise" required>
-                    <input type="text" name="industry-experience" placeholder="Industry Experience" required list="industry-experience-options">
+                    <input type="text" name="expertise" placeholder="Field of Expertise" required>
+                    <input type="text" name="experience" placeholder="Industry Experience" required list="industry-experience-options">
                     <datalist id="industry-experience-options">
                         <option value="Less than 1 year">
                         <option value="1-3 years">
                         <option value="3-5 years">
                         <option value="5+ years">
                     </datalist>
-                    <input type="text" name="educational-background" placeholder="Educational Background" required>
+                    <input type="text" name="education" placeholder="Educational Background" required>
 
                     <input type="text" name="availability" placeholder="Availability" list="availability-options" required>
                     <datalist id="availability-options">
@@ -109,7 +109,7 @@
                         <option value="Flexible schedule">
                     </datalist>
                     <div class="textarea-container">
-                        <textarea name="mentor-bio" placeholder="Mentor's Bio"></textarea>
+                        <textarea name="bio" placeholder="Mentor's Bio"></textarea>
                         <textarea name="mentorship-approach" placeholder="Mentorship Approach" required></textarea>
                     </div>
 

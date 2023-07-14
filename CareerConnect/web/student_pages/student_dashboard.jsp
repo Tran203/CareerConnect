@@ -22,7 +22,7 @@
         <li><a href="#">Profile</a></li>
         <li><a href="#">Mentors</a></li>
         <li><a href="#">Jobs</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="LogoutServlet.do">Logout</a></li>
       </ul>
     </nav>
   </header>
@@ -33,7 +33,7 @@
       <div class="card">
         <h2>Profile</h2>
         <p>View and update your profile information.</p>
-        <a href="#" class="btn">View Profile</a>
+        <a href="student_pages/profile.jsp" class="btn">View Profile</a>
       </div>
       <div class="card">
         <h2>Mentors</h2>

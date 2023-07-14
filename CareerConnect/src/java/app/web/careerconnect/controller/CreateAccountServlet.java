@@ -75,13 +75,13 @@ public class CreateAccountServlet extends HttpServlet {
             //get mentor details
             String location = request.getParameter("location");
             String expertise = request.getParameter("expertise");
-            String exprience = request.getParameter("exprience");
+            String experience = request.getParameter("experience");
             String education = request.getParameter("education");;
             String availability = request.getParameter("availability");
             String bio = request.getParameter("bio");
 
             //store mentor info to database
-            Mentors m = createMentor(email,name,lastName,location,expertise,exprience, education, availability, bio);
+            Mentors m = createMentor(email,name,lastName,location,expertise,experience, education, availability, bio);
             mfl.create(m);
 
             session.setAttribute("mentor", m);
@@ -119,7 +119,7 @@ public class CreateAccountServlet extends HttpServlet {
         return s;
     }
 
-    private Mentors createMentor(String email, String name, String lastName, String location, String expertise, String exprience, String education, String availability, String bio) {
+    private Mentors createMentor(String email, String name, String lastName, String location, String expertise, String experience, String education, String availability, String bio) {
         Mentors m = new Mentors();
 
         //
@@ -129,7 +129,7 @@ public class CreateAccountServlet extends HttpServlet {
 
         m.setLocation(location);
         m.setExpertise(expertise);
-        m.setExperience(exprience);
+        m.setExperience(experience);
         m.setEducation(education);
         m.setAvailability(availability);
         m.setBio(bio);
