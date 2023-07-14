@@ -71,7 +71,7 @@
           <p>Experience: <%= mentor1.getExperience()%></p>
           <p>Location: <%= mentor1.getLocation()%></p>
           <div class="mentor-actions">
-            <a href="./RequestMentorshipServlet.do?mentorEmail=<%= mentor1.getEmail()%>" class="btn"><i class="fas fa-user-plus"></i> Request Mentorship</a>
+            <a href="../RequestMentorshipServlet.do?mentorEmail=<%= mentor1.getEmail()%>" class="btn"><i class="fas fa-user-plus"></i> Request Mentorship</a>
             <a href="#" class="btn"><i class="fas fa-envelope"></i> Send Message</a>
           </div>
         </div>

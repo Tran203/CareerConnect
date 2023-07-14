@@ -37,7 +37,7 @@ public class MentorshipFacade extends AbstractFacade<Mentorship> implements Ment
 
     @Override
     public List<Mentorship> FindMentorshipUsingMentorEmail(String email) {
-        Query query = em.createQuery("SELECT m FROM Mentorship m WHERE m.email =:email");
+        Query query = em.createQuery("SELECT m FROM Mentorship m WHERE m.mentorEmail =:email");
         
         //pass
         query.setParameter("email", email);
