@@ -13,7 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import web.careerconnect.bl.MentorshipFacadeLocal;
 import web.careerconnect.bl.StudentsFacadeLocal;
+import web.careerconnect.entities.Mentorship;
 import web.careerconnect.entities.Students;
 
 /**
@@ -24,6 +26,8 @@ public class FindMenteeServlet extends HttpServlet {
 
     @EJB
     private StudentsFacadeLocal mfl;
+    @EJB
+    private MentorshipFacadeLocal mfl2;
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -32,9 +36,11 @@ public class FindMenteeServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
 
         List<Students> stdList = mfl.findAll();
+        List<Mentorship> mList = mfl2.findAll();
 
         //pass the list into session
         session.setAttribute("stdList", stdList);
+        session.setAttribute("mList", mList);
 
         //request dispatcher
         RequestDispatcher disp = request.getRequestDispatcher("mentor_pages/find_mentee.jsp");

@@ -114,7 +114,6 @@
                     <p>Interests: <%= std1.getInterest()%></p>
                     <p>Goal: <%= std1.getGoal()%></p>
                     <a href="#" class="btn">Choose Mentee</a>
-                    <a href="#" class="btn view-profile">View Profile</a>
 
 
                     <div class="popup-card">
@@ -129,14 +128,13 @@
                     </div>
                 </div>
                 <%}%>
-                <% if (!!mentorshipExists2 && std2 != null) {%>
+                <% if (!mentorshipExists2 && std2 != null) {%>
                 <div class="mentee">
                     <h2><%= std2.getFirstName()%> <%= std2.getLastName()%></h2>
                     <p>Field: Data Science</p>
                     <p>Interests: <%= std2.getInterest()%></p>
                     <p>Goal: <%= std2.getGoal()%></p>
                     <a href="#" class="btn">Choose Mentee</a>
-                    <a href="#" class="btn view-profile">View Profile</a>
 
                     <div class="popup-card">
                         <div class="popup-content">
