@@ -1,4 +1,4 @@
-// Job data - Replace this with your actual job data
+// Job data
 const jobData = [
   {
     title: "Frontend Developer",
